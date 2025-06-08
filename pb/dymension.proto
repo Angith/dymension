@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package dymension.app;
+
+option go_package = "github.com/dymensionxyz/dymension/x/app/types;apptypes";
+
+// Msg to create a new DymensionApp
+message MsgCreateDymensionApp {
+  string name = 1;
+  string description = 2;
+}
+
+// Response for MsgCreateDymensionApp
+message MsgCreateDymensionAppResponse {
+  string rollAppId = 1;
+}
+
+// Service definitions
+service Msg {
+  rpc CreateDymensionApp(MsgCreateDymensionApp) returns (MsgCreateDymensionAppResponse);
+}
